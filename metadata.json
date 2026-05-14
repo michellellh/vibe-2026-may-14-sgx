@@ -2,5 +2,5 @@
   "name": "Capital Prime",
   "description": "An elite financial platform for the Singapore Exchange, tailored for sophisticated investors with real-time analytics, wealth tracking, and professional-grade equity screening.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
