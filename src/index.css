@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&family=Geist:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface-lowest: var(--surface-lowest, #060e20);
+  --color-surface-dim: var(--surface-dim, #0b1326);
+  --color-surface: var(--surface, #0b1326);
+  --color-surface-bright: var(--surface-bright, #31394d);
+  --color-surface-container-low: var(--surface-container-low, #131b2e);
+  --color-surface-container: var(--surface-container, #171f33);
+  --color-surface-container-high: var(--surface-container-high, #222a3d);
+  --color-surface-container-highest: var(--surface-container-highest, #2d3449);
+  
+  --color-on-surface: var(--on-surface, #dae2fd);
+  --color-on-surface-variant: var(--on-surface-variant, #c3c5d8);
+  
+  --color-primary: var(--primary, #b7c4ff);
+  --color-primary-container: var(--primary-container, #2e62ff);
+  --color-on-primary-container: var(--on-primary-container, #f7f6ff);
+  
+  --color-secondary-container: var(--secondary-container, #3a4a5f);
+  --color-on-secondary-container: var(--on-secondary-container, #a9bad3);
+  
+  --color-outline-variant: var(--outline-variant, #434656);
+  
+  --color-up: #4ade80;
+  --color-down: #f87171;
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Hanken Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface antialiased transition-colors duration-500;
+    font-feature-settings: "tnum" on, "lnum" on;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-outline-variant rounded-full;
+}
+
+@keyframes flash-up {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: rgba(74, 222, 128, 0.1); }
+}
+
+@keyframes flash-down {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: rgba(248, 113, 113, 0.1); }
+}
+
+.ticker-flash-up {
+  animation: flash-up 1s ease-in-out;
+}
+
+.ticker-flash-down {
+  animation: flash-down 1s ease-in-out;
+}
