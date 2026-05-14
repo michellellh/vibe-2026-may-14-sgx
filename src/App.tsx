@@ -29,6 +29,7 @@ import {
 import { Tab, Stock, NewsItem, PortfolioHolding, Milestone, Friend, Theme } from './types';
 import { TOP_GAINERS, SCREENER_RESULTS, PORTFOLIO_HOLDINGS, WATCHLIST, NEWS_FEED, MOCK_FRIENDS, THEMES } from './constants';
 import ChatBot from './components/ChatBot';
+import DisqusComments from './components/DisqusComments';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<Tab>(Tab.MARKET);
@@ -274,6 +275,8 @@ export default function App() {
             </motion.div>
           )}
         </AnimatePresence>
+        
+        <DisqusComments />
       </main>
 
       <BottomNavBar activeTab={activeTab} onTabChange={setActiveTab} />
